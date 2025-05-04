@@ -1,5 +1,15 @@
 # Termux-API-Tools-MCP-Server 项目说明
 
+## 目录
+
+- [项目概述](#项目概述)
+- [功能特性](#功能特性)
+- [技术架构](#技术架构)
+- [测试截图](#测试截图)
+- [已知问题](#已知问题)
+- [免责声明](#免责声明)
+- [未来计划](#未来计划)
+
 ## 项目概述
 
 本项目是一个基于 Termux-API 的新人练手项目，主要用于通过 MCP 客户端操控 Android 设备。它提供了部分敏感操作功能，包括获取手机信息和执行电话/短信相关操作。
@@ -9,6 +19,7 @@
 ## 功能特性
 
 - 获取手机相关信息（部分功能可能涉及敏感数据）
+- 获取通话记录、获取短信记录等功能（敏感操作）
 - 拨打电话、发送短信等功能（敏感操作）
 - 通过 MCP 客户端进行远程控制
 
@@ -45,10 +56,18 @@
 ```
 
 
+## 测试截图
+<img src="https://github.com/hyhAsma/termux-api-tools-mcp-server/blob/main/showImgs/img1.png" width="510px">
+
+<img src="https://github.com/hyhAsma/termux-api-tools-mcp-server/blob/main/showImgs/img2.png" width="510px">
+
+<img src="https://github.com/hyhAsma/termux-api-tools-mcp-server/blob/main/showImgs/img3.jpg" width="510px">
+
 ## 已知问题
 
-- 电话功能模块 (`termux-telephony-x`) 目前仅 `cell` 电话功能测试通过
-- 其他电话相关功能可能存在异常（可能是手机兼容性问题）
+- 获取设备上所有无线电模块 (`termux-telephony-cellinfo`) 有点问题
+- cherry stduio调用电话`cell`功能存在异常
+- 其他偶发的调用失败情况（可能是手机兼容性问题）
 
 ## 免责声明
 
