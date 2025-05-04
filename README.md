@@ -23,12 +23,14 @@
 - 拨打电话、发送短信等功能（敏感操作）
 - 通过 MCP 客户端进行远程控制
 
-## 技术架构
+## 工作逻辑
 
 项目采用以下工作逻辑：
 
-1. Android 设备（Termux 环境）与 MCP 客户端处于同一局域网
-2. 通过MCP客户端 JSON 配置建立连接：
+1. Android 设备（Termux 环境）与 MCP 客户端处于同一局域网；
+2. Termux开启SSHD，并配置远程登陆；
+3. termux-api-tools-mcp-server.py可以链接的到Termux；
+4. 通过MCP客户端 JSON 配置建立连接：
 
 ```json 
 {
@@ -55,6 +57,12 @@
 }
 ```
 
+## 如何使用
+
+1. 将上述JSON导入cherry studio或claude等MCP客户端；
+2. 修改其termux-api-tools-mcp-server.py位置为自己本地文件位置
+3. pip install 相关包
+4. 填写env相关信息（前提是termux开启sshd，termux-api-tools-mcp-server.py可以通过网络请求的到termux）
 
 ## 测试截图
 <img src="https://github.com/hyhAsma/termux-api-tools-mcp-server/blob/main/showImgs/img1.png" width="510px">
